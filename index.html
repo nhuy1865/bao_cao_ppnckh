@@ -1,37 +1,50 @@
+
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Báo cáo nghiên cứu khoa học</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phân đoạn phôi nang - Báo cáo khoa học</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>Đề tài: Phân đoạn phôi nang bằng học sâu</h1>
-    <p>Sinh viên: Trần Quang Thông | GVHD: TS. Nguyễn Văn A</p>
-  </header>
+    <header>
+        <h1>Báo cáo nghiên cứu khoa học</h1>
+        <h2>Đề tài: Phân đoạn phôi nang bằng học sâu</h2>
+        <p><strong>Nhóm 12</strong> - Nguyễn Duy Tân, Võ Thị Như Ý, Nguyễn Trần Nam Thịnh</p>
+    </header>
 
-  <section>
-    <h2>1. Giới thiệu</h2>
-    <p>Nghiên cứu áp dụng mô hình học sâu để phân đoạn phôi nang hỗ trợ IVF.</p>
-  </section>
+    <section>
+        <h2>1. Giới thiệu</h2>
+        <p>Phân đoạn phôi nang là bước quan trọng trong đánh giá chất lượng phôi IVF. Tuy nhiên, ảnh phôi nang thường bị nhiễu và ranh giới các vùng khó xác định. Việc tự động hóa phân đoạn giúp tăng tính chính xác, giảm phụ thuộc chuyên gia.</p>
+    </section>
 
-  <section>
-    <h2>2. Mục tiêu</h2>
-    <ul>
-      <li>Xây dựng mô hình UNet++</li>
-      <li>Đánh giá bằng Dice, IoU</li>
-    </ul>
-  </section>
+    <section>
+        <h2>2. Phương pháp và mô hình</h2>
+        <p>So sánh các mô hình học sâu như U-Net, DeepLabv3 và MASS-Net. Sử dụng kỹ thuật tiền xử lý nâng cao và chiến lược huấn luyện như Focal Tversky Loss, AdamW Optimizer và CosineAnnealing Scheduler.</p>
+    </section>
 
-  <section>
-    <h2>3. Kết quả</h2>
-    <p>Dice: 92.3%, IoU: 87.5%, Accuracy: 94.8%</p>
-  </section>
+    <section>
+        <h2>3. Kết quả thực nghiệm</h2>
+        <ul>
+            <li>U-Net++ + ResNeXt50 đạt Pixel Accuracy: 91.96%</li>
+            <li>Mean IoU: 83.93%, F1-Score: 90.01%</li>
+            <li>Biên phân đoạn rõ, mô hình học được vùng ICM, TE, ZP tốt</li>
+        </ul>
+    </section>
 
-  <footer>
-    <p>&copy; 2025 - Trường Đại học XYZ</p>
-  </footer>
+    <section>
+        <h2>4. Hướng phát triển</h2>
+        <p>Tích hợp mô hình Transformer, học bán giám sát, tăng cường dữ liệu từ nhiều quốc gia, ứng dụng XAI để tăng độ tin cậy trong thực tế lâm sàng.</p>
+    </section>
+
+    <section>
+        <h2>5. Poster báo cáo</h2>
+        <embed src="POSTER.pdf" width="100%" height="600px" type="application/pdf">
+    </section>
+
+    <footer>
+        <p>&copy; Nhóm 12 - 2025 | Trường Đại học XYZ</p>
+    </footer>
 </body>
 </html>
