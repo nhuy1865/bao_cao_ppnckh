@@ -1,70 +1,84 @@
-
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Phân đoạn phôi nang </title>
-    <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Phân đoạn phôi thai </title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    <header>
-       
-        <h1>Đề tài: Phân đoạn phôi nang</h1>
-        <p><strong>Nhóm 12</strong> - Nguyễn Duy Tân, Võ Thị Như Ý, Nguyễn Trần Nam Thịnh</p>
+<body class="bg-gray-50 text-gray-800 font-sans leading-relaxed">
+  <div class="max-w-5xl mx-auto px-6 py-10 space-y-10">
+
+    <!-- Header -->
+    <header class="text-center">
+      <h1 class="text-3xl md:text-4xl font-bold text-blue-700 mb-2"> Phân đoạn phôi thai</h1>
+      <p class="text-lg text-gray-600"><strong>Nhóm 12</strong> - Nguyễn Duy Tân, Võ Thị Như Ý, Nguyễn Trần Nam Thịnh</p>
     </header>
 
     <section>
-        <h2>1. Giới thiệu</h2>
-        <p>Phân đoạn phôi nang là bước quan trọng trong đánh giá chất lượng phôi IVF. Tuy nhiên, ảnh phôi nang thường bị nhiễu và ranh giới các vùng khó xác định. Việc tự động hóa phân đoạn giúp tăng tính chính xác, giảm phụ thuộc chuyên gia.</p>
+      <h2 class="text-2xl font-semibold text-blue-600">1. Mục tiêu</h2>
+      <p class="mt-2">Phát triển mô hình học sâu để phân đoạn ảnh vi mô phôi nang, xác định ba vùng sinh học chính (ICM, TE, ZP) nhằm hỗ trợ đánh giá chất lượng phôi trong IVF một cách chính xác và khách quan.</p>
     </section>
 
-    <section>
-        <h2>2. Phương pháp và mô hình</h2>
-        <p>So sánh các mô hình học sâu như U-Net, DeepLabv3 và MASS-Net. Sử dụng kỹ thuật tiền xử lý nâng cao và chiến lược huấn luyện như Focal Tversky Loss, AdamW Optimizer và CosineAnnealing Scheduler.</p>
-    </section>
 
     <section>
-        <h2>*Định nghĩa vấn đề</h2>
-        <ul>
-            <li> Đầu vào: Ảnh vi mô phôi nang</li>
-            <li> Đầu ra: Mặt nạ phân đoạn của các vùng: ICM, TE, ZP</li>
-        </ul> 
-        <img src="in.png" alt="Poster báo cáo" style="width:100%; max-width:1000px; display:block; margin:auto; border:1px solid #ccc; border-radius:10px;">
-        
-        <h2> *Datasets </h2>
-        <ul>
-            <li>Nguồn: 235 ảnh phôi nang có gán nhãn pixel (ZP, TE, ICM, BL)</li>
-            <li>Chia tập: 85% train (200 ảnh), 15% test (35 ảnh)</li>
-            <li>Tăng cường dữ liệu: lật, xoay, dịch chuyển → tạo 3200 ảnh</li>
-            <li>Ứng dụng: huấn luyện mô hình phân đoạn trong IVF</li>
-            <li>Hạn chế: ít mẫu, thiếu đa dạng, chỉ từ Canada → giảm tổng quát hóa</li>
-        </ul>
-    </section>
-    <section>
-        <h2>3. Kết quả thực nghiệm</h2>
-    <ul>
-        <li>Res-Unet++ + ResNeXt50 là mô hình phân đoạn phôi nang hiệu quả nhất
-             → Đạt Pixel Accuracy: 91.96%, Mean IoU: 83.93%, F1-Score: 90.01%</li>
-        <li> Mô hình phân đoạn rõ ràng 3 vùng sinh học chính: ICM, TE, ZP
-             → Tái tạo được ranh giới phức tạp, gần sát với nhãn gốc</li>
-        <li> Hiệu quả vượt trội cả về định lượng và trực quan
-            → Góp phần nâng cao độ chính xác chọn phôi trong IVF</li>
-    </ul>
+      <h2 class="text-2xl font-semibold text-blue-600">2. Thử thách</h2>
+      <ul class="list-disc pl-6 space-y-1 mt-2">
+        <li>Ảnh nhiễu, ánh sáng không đều, biên mờ, khó phân đoạn chính xác.</li>
+        <li>Dữ liệu ít và thiếu đa dạng, nhãn phân đoạn phức tạp.</li>
+        <li>Phôi nang có hình thái đa dạng gây khó khăn cho tổng quát hóa.</li>
+      </ul>
     </section>
 
+    <!-- Hướng tiếp cận -->
     <section>
-        <h2>4. Hướng phát triển</h2>
-        <p>Tích hợp mô hình Transformer, học bán giám sát, tăng cường dữ liệu từ nhiều quốc gia, ứng dụng XAI để tăng độ tin cậy trong thực tế lâm sàng.</p>
+      <h2 class="text-2xl font-semibold text-blue-600">3. Hướng tiếp cận</h2>
+      <p class="mt-2">Nhóm thử nghiệm 4 mô hình học sâu: U-Net, DeepLabV3, MassNet và U-Net++ với backbone ResNeXt50. Áp dụng Focal Tversky Loss, AdamW, CosineAnnealing, tăng cường dữ liệu để tối ưu hiệu suất.</p>
     </section>
 
+    <!-- Dự kiến xử lý -->
     <section>
-        <h2>5. Poster báo cáo</h2>
-        <img src="POSTER.png" alt="Poster báo cáo" style="width:100%; max-width:1000px; display:block; margin:auto; border:1px solid #ccc; border-radius:10px;">
+      <h2 class="text-2xl font-semibold text-blue-600">4. Dự kiến xử lý</h2>
+      <ul class="list-disc pl-6 space-y-1 mt-2">
+        <li>Tiền xử lý ảnh, chuyển grayscale, normalization.</li>
+        <li>Huấn luyện 4 mô hình với cấu hình giống nhau.</li>
+        <li>Đánh giá bằng Dice, IoU, Accuracy, F1.</li>
+        <li>Phân tích loss, trực quan hóa CAM để chọn mô hình tốt nhất.</li>
+      </ul>
     </section>
 
-    <footer>
-        <p>&copy;  05/2025 | Trường Đại học Sài Gòn</p>
+    <!-- Related Work -->
+    <section>
+      <h2 class="text-2xl font-semibold text-blue-600">5. Related Work</h2>
+      <div class="mt-2 space-y-3">
+        <p>🔗 <a href="https://doi.org/10.1016/j.compbiomed.2021.104743" class="text-blue-600 underline" target="_blank">U-Net++ with nested skip pathways</a> (Zhou et al., 2021) sử dụng kết nối lồng nhau giúp tăng hiệu quả truyền đặc trưng. Tuy nhiên, mô hình này vẫn khá nặng, chưa tối ưu tốt khi áp dụng vào tập dữ liệu nhỏ như ảnh phôi nang.</p>
+        <p>🔗 <a href="https://ieeexplore.ieee.org/document/9444781" class="text-blue-600 underline" target="_blank">DeepLabV3+</a> (Raju et al., 2021) dùng atrous conv nhưng không phân biệt được 3 vùng.</p>
+        <p>🔗 <a href="https://doi.org/10.1016/j.dib.2022.107999"class="text-blue-600 underline" target="_blank">MassNet</a> (Nguyen et al., 2022) nhẹ, nhưng chưa kiểm chứng đủ trên ảnh thực tế.</p>
+      </div>
+    </section>
+
+    <!-- Proposed Method -->
+    <section>
+      <h2 class="text-2xl font-semibold text-blue-600">6. Proposed Method</h2>
+      <ul class="list-disc pl-6 space-y-1 mt-2">
+        <li><strong>MassNet:</strong> nhẹ, hội tụ ổn nhưng biên ICM mờ.</li>
+        <li><strong>U-Net + MiT-B5:</strong> học toàn cục tốt nhưng loss dao động mạnh.</li>
+        <li><strong>U-Net + ResNeXt50:</strong> ổn định, phân đoạn khá sắc nét.</li>
+        <li><strong>U-Net++ + ResNeXt50:</strong> tốt nhất: hội tụ nhanh, loss < 0.01, phân đoạn sắc nét 3 vùng.</li>
+      </ul>
+      <p class="mt-2">Mô hình được đề xuất cuối cùng là <strong>U-Net++ + ResNeXt50</strong> với F1 = 90.01%, IoU = 83.93%, Accuracy = 91.96%.</p>
+    </section>
+
+    <!-- Poster -->
+    <section >
+      <h2 class="text-2xl font-semibold text-blue-600">7. Poster báo cáo</h2>
+      <img src="POSTER.png" alt="Poster báo cáo" class="mt-4 rounded-xl shadow-lg mx-auto max-w-4xl w-full">
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center text-sm text-gray-500 pt-10 border-t mt-10">
+      &copy; 05/2025 | Trường Đại học Sài Gòn
     </footer>
+  </div>
 </body>
 </html>
